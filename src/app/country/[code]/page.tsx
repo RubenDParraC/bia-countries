@@ -23,8 +23,7 @@ import { fetcher } from "@/app/utils";
 export default function CountryDetail() {
   const { theme: darkMode } = useTheme();
   const router = useRouter();
-  const params = useParams();
-  const code = params?.code;
+  const { code } = useParams() as { code: string };
 
   const { data: country, error } = useSWR<Country>(
     code
@@ -100,7 +99,7 @@ export default function CountryDetail() {
               <p className="text-sm">
                 <strong>Currencies:</strong>{" "}
                 {Object.entries(country.currencies ?? {})
-                  .map(([code, { name, symbol }]) => `${name} (${symbol})`)
+                  .map(([, { name, symbol }]) => `${name} (${symbol})`)
                   .join(", ")}
               </p>
               <p className="text-sm">

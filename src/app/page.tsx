@@ -33,7 +33,7 @@ export default function HomePage() {
   if (error) return <div>Error cargando países</div>;
   if (!countries) return <div>Cargando...</div>;
 
-  const filteredCountries = countries.filter((country: any) => {
+  const filteredCountries = countries.filter((country: Country) => {
     const matchesSearch = country.name.common
       .toLowerCase()
       .includes(searchTerm.toLowerCase());

@@ -15,10 +15,10 @@ function IconComponent({
   className,
   onClick,
 }: IconComponentProps) {
-  const HeroIcons = variant === "outline" ? HeroIconsOutline : HeroIconsSolid;
-
-  // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
-  const Icon = useMemo(() => HeroIcons[iconName], [iconName, variant]);
+  const Icon = useMemo(() => {
+    const icons = variant === "outline" ? HeroIconsOutline : HeroIconsSolid;
+    return icons[iconName];
+  }, [iconName, variant]);
 
   if (!Icon) {
     return <div>Icon not found!</div>;

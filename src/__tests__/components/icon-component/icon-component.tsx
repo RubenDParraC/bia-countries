@@ -6,6 +6,9 @@ import { render, screen, fireEvent } from "@testing-library/react";
 // Component under test
 import IconComponent from "../../../../components/icon-component/icon-component";
 
+// types
+import { HeroIconNames } from "../../../../components/icon-component/types";
+
 // Define a sample icon name that exists in @heroicons/react
 const sampleIcon = "MoonIcon";
 
@@ -62,7 +65,8 @@ describe("IconComponent", () => {
   // Test fallback behavior when icon name is invalid
 
   it("renders fallback text when icon is not found", () => {
-    render(<IconComponent iconName={"InvalidIcon" as any} />);
+    const invalidIcon = "InvalidIcon" as unknown as HeroIconNames;
+    render(<IconComponent iconName={invalidIcon} />);
     expect(screen.getByText("Icon not found!")).toBeInTheDocument();
   });
 });
