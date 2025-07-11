@@ -10,26 +10,31 @@ El proyecto está construido con **Next.js (App Router)** usando la estructura m
 
 ### Estructura de Carpetas
 
+```bash
 src/
-├── app/ # Rutas principales (Home y Country Detail)
-│ ├── page.tsx # Página principal
-│ └── country/[code]/ # Ruta dinámica con detalle por país
-│ └── page.tsx
-├── components/ # Componentes reutilizables
-│ ├── button/
-│ ├── country-card/
-│ ├── header/
-│ ├── icon-component/
-│ ├── input/
-│ ├── select/
-│ └── tag/
-├── context/ # Contexto global (modo oscuro, filtros)
-├── layouts/ # Componentes de layout base
-├── utils/ # Funciones utilitarias
-├── types/ # Tipos TypeScript compartidos
-└── tests/ # Pruebas unitarias
-├── app/ # Pruebas para páginas
-└── components/ # Pruebas para cada componente UI
+  app/                    # Rutas principales (Home y Country Detail)
+    page.tsx             # Página principal
+    country/[code]/
+      page.tsx           # Ruta dinámica con detalle por país
+
+  components/            # Componentes reutilizables
+    button/
+    country-card/
+    header/
+    icon-component/
+    input/
+    select/
+    tag/
+
+  context/               # Contexto global (modo oscuro, filtros)
+  layouts/               # Componentes de layout base
+  utils/                 # Funciones utilitarias
+  types/                 # Tipos TypeScript compartidos
+
+  __tests__/             # Pruebas unitarias
+    app/                 # Pruebas para páginas
+    components/          # Pruebas para cada componente UI
+```
 
 ---
 
