@@ -1,36 +1,73 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Countries App - Frontend Challenge
 
-## Getting Started
+Aplicación construida con **Next.js**, **TypeScript** y **Tailwind CSS** para consultar información de países utilizando la API de [restcountries.com](https://restcountries.com/). El diseño es responsivo, incluye modo oscuro y permite buscar, filtrar y explorar detalles de cada país.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Arquitectura del Proyecto
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+El proyecto está construido con **Next.js (App Router)** usando la estructura moderna introducida desde la versión 13.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Estructura de Carpetas
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+src/
+├── app/ # Rutas principales (Home y Country Detail)
+│ ├── page.tsx # Página principal
+│ └── country/[code]/ # Ruta dinámica con detalle por país
+│ └── page.tsx
+├── components/ # Componentes reutilizables
+│ ├── button/
+│ ├── country-card/
+│ ├── header/
+│ ├── icon-component/
+│ ├── input/
+│ ├── select/
+│ └── tag/
+├── context/ # Contexto global (modo oscuro, filtros)
+├── layouts/ # Componentes de layout base
+├── utils/ # Funciones utilitarias
+├── types/ # Tipos TypeScript compartidos
+└── tests/ # Pruebas unitarias
+├── app/ # Pruebas para páginas
+└── components/ # Pruebas para cada componente UI
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Tecnologías y Herramientas
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Next.js (App Directory)** – Renderizado estático y dinámico.
+- **TypeScript** – Tipado estático.
+- **Tailwind CSS** – Utilidades para estilos rápidos y responsivos.
+- **SWR** – Manejo eficiente de datos (cache, fetch, revalidación).
+- **Jest** + **React Testing Library** – Pruebas unitarias.
+- **ESLint / Prettier** – Linter y formateo automático de código.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## Generalidades de la Solución
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- La **Home Page** muestra todos los países con buscador y filtro por región.
+- Al hacer clic en una tarjeta se accede a `/country/[code]` con información detallada.
+- Se implementó **modo oscuro** mediante `Context API`.
+- Carga de países limítrofes con **pre-fetch usando SWR**.
+- Código modular, limpio y mantenible con **tipado estricto**.
+- Diseño **mobile-first y totalmente responsivo**.
+- Se respetó el diseño base sugerido (figma o imagen guía).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## Pruebas Unitarias
+
+Se implementaron pruebas unitarias para:
+
+- ✅ Páginas principales (`HomePage`, `CountryDetail`)
+- ✅ Componentes individuales (`Button`, `Header`, `Tag`, `Select`, `Input`, `CountryCard`, `IconComponent`)
+
+## Ejecución del Proyecto
+
+Sigue los siguientes pasos para levantar el entorno localmente:
+
+### ✅ Requisitos Previos
+
+- Node.js >= 18.x
+- Yarn o NPM
