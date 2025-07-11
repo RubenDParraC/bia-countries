@@ -65,14 +65,14 @@ src/
 
 Se implementaron pruebas unitarias para:
 
-- ✅ Páginas principales (`HomePage`, `CountryDetail`)
-- ✅ Componentes individuales (`Button`, `Header`, `Tag`, `Select`, `Input`, `CountryCard`, `IconComponent`)
+- Páginas principales (`HomePage`, `CountryDetail`)
+- Componentes individuales (`Button`, `Header`, `Tag`, `Select`, `Input`, `CountryCard`, `IconComponent`)
 
 ## Ejecución del Proyecto
 
 Sigue los siguientes pasos para levantar el entorno localmente:
 
-### ✅ Requisitos Previos
+### Requisitos Previos
 
 - Node.js >= 18.x
 - Yarn o NPM
