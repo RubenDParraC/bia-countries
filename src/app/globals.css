@@ -1,26 +1,37 @@
+/* Importar la fuente Nunito Sans desde Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap");
+
 @import "tailwindcss";
 
+/* Colores base según la guía de estilo */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Light Mode Colors */
+  --color-bg: hsl(0, 0%, 98%); /* Fondo claro */
+  --color-text: hsl(200, 15%, 8%); /* Texto oscuro */
+  --color-input: hsl(0, 0%, 52%); /* Input gris */
+  --color-elements: hsl(0, 0%, 100%); /* Elementos claros */
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
+/* Modo oscuro */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --color-bg: hsl(207, 26%, 17%); /* Fondo oscuro */
+    --color-text: hsl(0, 0%, 100%); /* Texto claro */
+    --color-elements: hsl(209, 23%, 22%); /* Elementos oscuros */
   }
 }
 
+/* Variables compatibles con tema y fuentes */
+@theme inline {
+  --color-background: var(--color-bg);
+  --color-foreground: var(--color-text);
+  --font-sans: "Nunito Sans", sans-serif; /* Cambiar a Nunito Sans */
+  --font-mono: var(--font-geist-mono);
+}
+
+/* Estilos globales */
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: "Nunito Sans", sans-serif;
 }
